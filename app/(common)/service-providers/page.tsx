@@ -8,7 +8,7 @@ export default function ServiceProvidersPage() {
             id: "elite-interiors",
             name: "Elite Interiors",
             location: "Chicago, IL",
-            services: "Interior Design, Space Planning",
+            profession: "Interior Design",
             experience: "8 Years",
             rating: "4.8/5 (120 reviews)",
             description: "Specializing in modern residential design",
@@ -18,7 +18,7 @@ export default function ServiceProvidersPage() {
             id: "styleworks-studio",
             name: "StyleWorks Studio",
             location: "Chicago, IL",
-            services: "Furniture Selection, Color Consultation",
+            profession: "Furniture Selection",
             experience: "5 Years",
             rating: "4.5/5 (85 reviews)",
             description: "Experts in eclectic and contemporary styles",
@@ -28,7 +28,7 @@ export default function ServiceProvidersPage() {
             id: "creative-designs",
             name: "Creative Designs Inc.",
             location: "Oak Brook, IL",
-            services: "Project Management, 3D Visualization",
+            profession: "Project Management",
             experience: "12 Years",
             rating: "4.9/5 (200 reviews)",
             description: "Specializing in commercial spaces",
@@ -38,7 +38,7 @@ export default function ServiceProvidersPage() {
             id: "modern-spaces",
             name: "Modern Spaces",
             location: "Northbrook, IL",
-            services: "Interior Design, Lighting Design",
+            profession: "Interior Design",
             experience: "3 Years",
             rating: "4.3/5 (60 reviews)",
             description: "Focused on sustainable design solutions",
@@ -180,32 +180,31 @@ export default function ServiceProvidersPage() {
                         {/* Results Header */}
                         <div className="flex items-center justify-between mb-6">
                             <p className="text-gray-600">{providers.length} service providers found</p>
-                            <div className="flex items-center space-x-2">
-                                <span className="text-sm text-gray-600">Sort By:</span>
-                                <select className="border border-gray-300 rounded px-3 py-1 text-sm">
-                                    <option>Relevance</option>
-                                    <option>Experience</option>
-                                    <option>Rating</option>
-                                </select>
-                            </div>
+
                         </div>
 
                         {/* Service Provider Listings */}
+
                         <div className="space-y-4">
                             {providers.map((provider) => (
-                                <div key={provider.id} className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 hover:shadow-md transition-shadow">
-                                    <div className="flex items-start justify-between">
-                                        <div className="flex items-start space-x-4">
-                                            <div className="w-12 h-12 bg-black rounded-lg flex items-center justify-center flex-shrink-0">
+                                <div
+                                    key={provider.id}
+                                    className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 hover:shadow-md transition-shadow flex flex-col justify-between h-full"
+                                >
+                                    <div className="flex justify-between items-start">
+                                        {/* Left: Initial & Provider Info */}
+                                        <div className="flex space-x-4">
+                                            <div className="w-12 h-12 bg-black rounded-lg flex items-center justify-center">
                                                 <span className="text-white font-bold text-sm">{provider.initial}</span>
                                             </div>
-                                            <div className="flex-1">
+                                            <div>
                                                 <h3 className="text-lg font-semibold text-gray-900 mb-1">{provider.name}</h3>
                                                 <p className="text-gray-600 mb-3">{provider.location}</p>
+
                                                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
                                                     <div>
-                                                        <span className="text-gray-500">Services</span>
-                                                        <p className="font-medium">{provider.services}</p>
+                                                        <span className="text-gray-500">Profession</span>
+                                                        <p className="font-medium">{provider.profession}</p>
                                                     </div>
                                                     <div>
                                                         <span className="text-gray-500">Experience</span>
@@ -216,16 +215,22 @@ export default function ServiceProvidersPage() {
                                                         <p className="font-medium">{provider.rating}</p>
                                                     </div>
                                                 </div>
-                                                <p className="text-gray-500 text-sm mt-3">{provider.description}</p>
+                                                <p className="text-gray-500 text-sm mt-4">{provider.description}</p>
                                             </div>
                                         </div>
-                                        <div>
-                                            <button className="text-gray-400 flex hover:text-gray-600 w-auto justify-center items-center">
-                                                Save
-                                                <Bookmark className="w-4 h-4 ml-1" />
 
-                                            </button>
-                                        </div>
+                                        {/* Save Button */}
+                                        <button className="text-gray-400 flex hover:text-gray-600 w-auto justify-center items-center">
+                                            Save
+                                            <Bookmark className="w-4 h-4 ml-1" />
+                                        </button>
+                                    </div>
+
+                                    {/* Contact Button aligned bottom right */}
+                                    <div className="mt-6 flex justify-end">
+                                        <button className="bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+                                            Contact Provider
+                                        </button>
                                     </div>
                                 </div>
                             ))}

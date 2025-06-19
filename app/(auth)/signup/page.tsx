@@ -132,21 +132,20 @@ export default function SignupPage() {
                   </button>
                 </div>
               </div>
-            </div>
 
+            </div>
+            <div>
+              <label htmlFor="location" className="block text-sm font-medium text-gray-700">Location</label>
+              <input
+                id="location"
+                type="text"
+                placeholder="City, State"
+                className="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              />
+            </div>
             {/* Customer-specific fields */}
             {userType === "customer" && (
               <>
-                <div>
-                  <label htmlFor="location" className="block text-sm font-medium text-gray-700">Location</label>
-                  <input
-                    id="location"
-                    type="text"
-                    placeholder="City, State"
-                    className="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                  />
-                </div>
-
                 <div>
                   <label htmlFor="interests" className="block text-sm font-medium text-gray-700">Areas of Interest</label>
                   <div className="mt-2 grid grid-cols-2 md:grid-cols-3 gap-3">
@@ -177,32 +176,28 @@ export default function SignupPage() {
             {/* Service Provider-specific fields */}
             {userType === "provider" && (
               <>
-                <div>
-                  <label htmlFor="companyName" className="block text-sm font-medium text-gray-700">Company Name *</label>
-                  <input
-                    id="companyName"
-                    type="text"
-                    required
-                    className="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                  />
-                </div>
-
                 <div className="grid grid-cols-1 gap-6">
                   <div>
-                    <label htmlFor="businessType" className="block text-sm font-medium text-gray-700">Business Type *</label>
+                    <label htmlFor="profession" className="block text-sm font-medium text-gray-700">
+                      Profession *
+                    </label>
                     <select
-                      id="businessType"
+                      id="profession"
                       required
                       className="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                     >
-                      <option value="">Select business type</option>
-                      <option value="individual">Individual Designer</option>
-                      <option value="studio">Design Studio</option>
-                      <option value="firm">Design Firm</option>
-                      <option value="contractor">Contractor</option>
-                      <option value="retailer">Furniture Retailer</option>
+                      <option value="">Select your profession</option>
+                      <option value="electrician">Electrician</option>
+                      <option value="plumber">Plumber</option>
+                      <option value="carpenter">Carpenter</option>
+                      <option value="painter">Painter</option>
+                      <option value="mason">Mason</option>
+                      <option value="ac-technician">AC Technician</option>
+                      <option value="welder">Welder</option>
+                      <option value="tile-worker">Tile Worker</option>
                     </select>
                   </div>
+
                   <div>
                     <label htmlFor="experience" className="block text-sm font-medium text-gray-700">Years of Experience *</label>
                     <select
@@ -219,31 +214,29 @@ export default function SignupPage() {
                   </div>
                 </div>
 
+                {/* Hourly Rate */}
                 <div>
-                  <label htmlFor="services" className="block text-sm font-medium text-gray-700">Services Offered *</label>
-                  <div className="mt-2 grid grid-cols-2 md:grid-cols-3 gap-3">
-                    {[
-                      "Interior Design",
-                      "Space Planning",
-                      "Color Consultation",
-                      "Furniture Selection",
-                      "Project Management",
-                      "3D Visualization",
-                    ].map((service) => (
-                      <div key={service} className="flex items-center space-x-2">
-                        <input
-                          type="checkbox"
-                          id={service.toLowerCase().replace(" ", "-")}
-                          className="h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
-                        />
-                        <label htmlFor={service.toLowerCase().replace(" ", "-")} className="text-sm text-gray-700">
-                          {service}
-                        </label>
-                      </div>
-                    ))}
-                  </div>
+                  <label htmlFor="hourlyRate" className="block text-sm font-medium text-gray-700">Hourly Rate (in BDT) *</label>
+                  <input
+                    id="hourlyRate"
+                    type="number"
+                    required
+                    min="0"
+                    placeholder="e.g., 500"
+                    className="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  />
                 </div>
 
+                {/* Profile Image Upload */}
+                <div>
+                  <label htmlFor="profileImage" className="block text-sm font-medium text-gray-700">Upload Profile Image</label>
+                  <input
+                    id="profileImage"
+                    type="file"
+                    accept="image/*"
+                    className="mt-1 block w-full border border-dashed border-gray-300 bg-white text-gray-700 rounded-md px-3 py-10 text-center cursor-pointer file:hidden"
+                  />
+                </div>
 
                 <div>
                   <label htmlFor="bio" className="block text-sm font-medium text-gray-700">Professional Bio</label>
@@ -279,12 +272,7 @@ export default function SignupPage() {
             </div>
 
 
-            <div className="text-sm text-gray-600 flex items-end justify-end pt-5 w-full gap-1">
-              Already have an account?{" "}
-              <Link href="/login" className="text-blue-600 hover:text-blue-700 font-medium">
-                Login
-              </Link>
-            </div>
+
             {/* Submit Button */}
             <button
               type="submit"
@@ -293,6 +281,12 @@ export default function SignupPage() {
               Create Account
             </button>
           </form>
+          <div className="text-sm text-gray-600 flex items-end justify-center pt-5 w-full gap-1">
+            Already have an account?{" "}
+            <Link href="/login" className="text-blue-600 hover:text-blue-700 font-medium">
+              Login
+            </Link>
+          </div>
 
         </div>
       </div>

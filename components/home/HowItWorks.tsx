@@ -5,6 +5,7 @@ import {
     FileText,
     CheckCircle,
 } from "lucide-react";
+import Image from 'next/image';
 
 const HowItWorks = () => {
     return (
@@ -83,9 +84,10 @@ const HowItWorks = () => {
                 </div>
 
                 <div className="relative">
-                    <img
-                        className="inset-0 object-cover object-center w-full rounded-lg shadow-lg h-96 lg:absolute lg:h-full"
-                        src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=1926&q=80"
+                    <Image
+                        src='/how-works.svg'
+                        fill
+                        className="object-contain w-full  h-96 lg:absolute lg:h-full"
                         alt="Service provider at work"
                     />
                 </div>
