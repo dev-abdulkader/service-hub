@@ -21,7 +21,7 @@ const Testimonials = () => {
                     </div>
                 </div>
 
-                <div className="grid md:grid-cols-2 gap-6">
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {/* Testimonial 1 */}
                     <div className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                         <div className="flex items-center mb-4">
@@ -31,9 +31,9 @@ const Testimonials = () => {
                             <span className="font-semibold text-gray-900">RNT Platform</span>
                         </div>
                         <blockquote className="text-gray-700 mb-6 leading-relaxed">
-                            "I can't thank RNT enough for connecting me with the perfect interior design job. The job matching
-                            algorithm is spot on, and the job alerts kept me updated on new opportunities. It's a game-changer for
-                            anyone in the design industry."
+                            &quot;I can&apos;t thank RNT enough for connecting me with the perfect interior design job. The job matching
+                            algorithm is spot on, and the job alerts kept me updated on new opportunities. It&apos;s a game-changer for
+                            anyone in the design industry.&quot;
                         </blockquote>
                         <div className="flex items-center">
 
@@ -53,9 +53,31 @@ const Testimonials = () => {
                             <span className="font-semibold text-gray-900">RNT Platform</span>
                         </div>
                         <blockquote className="text-gray-700 mb-6 leading-relaxed">
-                            "I can't thank RNT enough for connecting me with the perfect architectural design job. The job
-                            matching algorithm is spot on, and the job alerts kept me updated on new opportunities. It's a
-                            game-changer for anyone in the design industry."
+                            &quot;I can&apos;t thank RNT enough for connecting me with the perfect architectural design job. The job
+                            matching algorithm is spot on, and the job alerts kept me updated on new opportunities. It&apos;s a
+                            game-changer for anyone in the design industry.&quot;
+                        </blockquote>
+                        <div className="flex items-center">
+
+                            <div className='flex items-center gap-4'>
+                                <p className="font-semibold text-gray-900">Michael Chen</p>
+                                <p className="text-sm text-gray-600">Architectural Designer</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Testimonial 3 */}
+                    <div className="bg-gray-50 rounded-xl p-6 border border-gray-200">
+                        <div className="flex items-center mb-4">
+                            <div className="w-8 h-8 bg-yellow-400 rounded flex items-center justify-center mr-3">
+                                <span className="text-white font-bold text-sm">M</span>
+                            </div>
+                            <span className="font-semibold text-gray-900">RNT Platform</span>
+                        </div>
+                        <blockquote className="text-gray-700 mb-6 leading-relaxed">
+                            &quot;I can&apos;t thank RNT enough for connecting me with the perfect architectural design job. The job
+                            matching algorithm is spot on, and the job alerts kept me updated on new opportunities. It&apos;s a
+                            game-changer for anyone in the design industry.&quot;
                         </blockquote>
                         <div className="flex items-center">
 

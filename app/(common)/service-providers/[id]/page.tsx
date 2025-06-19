@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { MapPin, Briefcase, Star, Upload, Mail, Phone } from "lucide-react"
+import { MapPin, Briefcase, Star,  Mail, Phone } from "lucide-react"
 
 export default function ProviderDetailsPage() {
     // Sample provider data (in a real app, this would come from props or a data fetch)

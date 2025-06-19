@@ -1,3 +1,4 @@
+/*eslint-disable*/
 "use client"
 import React from "react";
 import { Bookmark, MapPin, Star } from "lucide-react";

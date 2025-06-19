@@ -9,7 +9,7 @@ const navLinks = [
     { name: "Home", href: "/" },
     { name: "Hire A Service Provider", href: "/service-providers" },
     { name: "Become A Service Provider", href: "/signup" },
-    { name: "Log In", href: "/login" },
+    { name: "Login", href: "/login" },
 ];
 
 const DesktopHeader = () => {

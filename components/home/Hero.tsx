@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
 import Statistics from './Statistics';
+import Image from 'next/image';
 
 const Hero = () => {
     return (
@@ -35,10 +36,11 @@ const Hero = () => {
 
                     {/* Right Content - Hero Image */}
                     <div className="relative ">
-                        <div className="relative w-full h-96 lg:h-[500px] rounded-md overflow-hidden">
-                            <img
-                                src="https://headstart-recruitment.nl/wp-content/uploads/2020/06/undraw_people_search_wctu-1-1-1024x759.png"
-                                alt="People search illustration - finding the right candidates"
+                        <div className="relative w-full h-96 lg:h-[500px] overflow-hidden">
+                            <Image
+                                src='/repair.svg'
+                                alt='Hero Image'
+                                fill
                                 className="w-full h-full object-contain rounded-md"
                             />
                         </div>

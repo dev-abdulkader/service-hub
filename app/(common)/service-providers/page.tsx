@@ -1,7 +1,6 @@
 "use client"
 
-import { Search, MapPin, Upload, Bookmark } from "lucide-react"
-import Link from "next/link"
+import { Search, MapPin, Bookmark } from "lucide-react"
 
 export default function ServiceProvidersPage() {
     const providers = [

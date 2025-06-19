@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Eye, EyeOff, Upload, User, Building2 } from "lucide-react"
+import { Eye, EyeOff, User, Building2 } from "lucide-react"
 import Link from "next/link"
 
 export default function SignupPage() {

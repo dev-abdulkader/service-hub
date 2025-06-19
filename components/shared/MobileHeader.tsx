@@ -9,7 +9,7 @@ const navLinks = [
     { name: "Home", href: "/" },
     { name: "Hire A Service Provider", href: "/service-providers" },
     { name: "Become A Service Provider", href: "/signup" },
-    { name: "Log In", href: "/login" },
+    { name: "Login", href: "/login" },
 ];
 
 const MobileHeader = () => {
@@ -23,6 +23,7 @@ const MobileHeader = () => {
                     <Menu size={24} />
                 </button>
             </div>
+
 
             {/* Overlay */}
             {isOpen && (
@@ -43,7 +44,14 @@ const MobileHeader = () => {
                         <X size={24} />
                     </button>
                 </div>
-
+                {/* Search Bar */}
+                <div className="flex flex-1 max-w-md px-4 pt-3">
+                    <input
+                        type="text"
+                        placeholder="What Are You Looking For?"
+                        className="w-full px-4 py-2 border text-sm border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-400"
+                    />
+                </div>
                 <div className="p-4 space-y-3">
                     {navLinks.map((item) => (
                         <Link
@@ -70,7 +78,7 @@ const MobileHeader = () => {
                             className="px-4 py-2 rounded text-gray-700 border border-gray-300 hover:border-gray-400 text-center"
                             onClick={() => setIsOpen(false)}
                         >
-                            Log In
+                            Login
                         </Link>
                     </div>
                 </div>
