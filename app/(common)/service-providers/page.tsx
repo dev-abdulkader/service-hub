@@ -220,10 +220,13 @@ export default function ServiceProvidersPage() {
                                                 <p className="text-gray-500 text-sm mt-3">{provider.description}</p>
                                             </div>
                                         </div>
-                                        <button className="text-gray-400 hover:text-gray-600">
-                                            <Bookmark className="w-4 h-4 mr-1" />
-                                            Save Provider
-                                        </button>
+                                        <div>
+                                            <button className="text-gray-400 flex hover:text-gray-600 w-auto justify-center items-center">
+                                                Save
+                                                <Bookmark className="w-4 h-4 ml-1" />
+
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
                             ))}

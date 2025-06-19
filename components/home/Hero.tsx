@@ -24,7 +24,7 @@ const Hero = () => {
                         </div>
 
                         <div className="flex flex-col sm:flex-row gap-4">
-                            <Link href='/find-service-providers' className="bg-gray-900 cursor-pointer hover:bg-gray-800 text-white font-medium px-8 py-3 rounded-md">
+                            <Link href='/service-providers' className="bg-gray-900 cursor-pointer hover:bg-gray-800 text-white font-medium px-8 py-3 rounded-md">
                                 Find Service Providers
                             </Link>
                             <Link href='/signup' className="border bg-white hover:bg-gray-100 cursor-pointer border-gray-300 hover:border-gray-400 text-gray-700 font-medium px-8 py-3 rounded-md">

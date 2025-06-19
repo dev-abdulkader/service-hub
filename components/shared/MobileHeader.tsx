@@ -7,7 +7,7 @@ import ContainerWrapper from "../common/ContainerWrapper";
 
 const navLinks = [
     { name: "Home", href: "/" },
-    { name: "Hire A Service Provider", href: "/find-service-providers" },
+    { name: "Hire A Service Provider", href: "/service-providers" },
     { name: "Become A Service Provider", href: "/signup" },
     { name: "Log In", href: "/login" },
 ];
